@@ -1,10 +1,9 @@
-<form method="POST" action="/posts">
+<a href="/posts">Return to Post Page</a>
 
-  <!--
-    Template for creating input form for a string object key called stringMember
-    NOTE: for numeric input fields use `type="number"`
-  --->
-  <label for="category">Sport Category:</label>
+
+<form method="POST" action="/posts/{{post._id}}?_method=PUT">
+
+ <label for="category">Sport Category:</label>
   <input type="text" placeholder="Sport Topic" name="category" id="category">
   
   {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
@@ -18,7 +17,5 @@
   <label for="post">Post:</label>
   <textarea type="text" placeholder="Idea" name="post" id="post"> </textarea>
 
-
-
-  <input type="submit" value="Submit Post" />
+  <input type="submit" value="Update Post" />
 </form>
