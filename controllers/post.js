@@ -48,7 +48,7 @@ postRouter.get('/', (req, res) => {
 postRouter.post('/', (req, res) => {
   postApi.addPost(req.body)
   .then(() => {
-    res.send('Post Created')
+    res.redirect('/posts')
   })
   .catch((err) => {
     res.send(err)
@@ -62,7 +62,7 @@ postRouter.get('/new', (req, res) => {
 postRouter.get('/:postId', (req, res) => {
   postApi.getPost(req.params.postId)
   .then((post) => {
-    res.send(post)
+    res.render('posts/singlePost', {post})
   })
   .catch((err) => {
     res.send(err)
@@ -82,7 +82,7 @@ postRouter.put('/:postId', (req, res) => {
 postRouter.delete('/:postId', (req, res) => {
   postApi.deletePost(req.params.postId)
   .then(() => {
-    res.send('Post has been deleted')
+    res.redirect('/posts')
   })
   .catch((err) => {
     res.send(err)
