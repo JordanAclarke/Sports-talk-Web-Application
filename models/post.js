@@ -57,8 +57,8 @@ const PostCollection = mongoose.model('Post', PostSchema)
  * TODO: delete this it's just a sample
  *
  */
-function getHelloWorldString() {
-  return 'hello world'
+function getAllPosts() {
+  return PostCollection.find()
 }
 
 /* Step 5
@@ -67,5 +67,5 @@ function getHelloWorldString() {
  * object
  */
 module.exports = {
-  getHelloWorldString
+  getAllPosts
 }
