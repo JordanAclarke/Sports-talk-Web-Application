@@ -3,7 +3,8 @@
 <p>{{post.post}}</p>
 <p>{{post.created_at}}</p>
 
-<button href="/posts/{{post._id}}/edit">Edit Post</button>
+<a href="/posts/{{post._id}}/edit">Edit Post</a>
 <form method="POST" action="/posts/{{post._id}}?_method=DELETE">
     <input type="submit" value="Delete Post" />
+
 </form>
