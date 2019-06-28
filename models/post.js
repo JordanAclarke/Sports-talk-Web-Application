@@ -27,7 +27,7 @@ const mongoose = require('./connection.js')
  *
  */
 const PostSchema = new mongoose.Schema({
- title: {
+ category: {
   type: String,
   required: true
  },
@@ -60,6 +60,18 @@ const PostCollection = mongoose.model('Post', PostSchema)
 function getAllPosts() {
   return PostCollection.find()
 }
+function addPost(newPost) {
+  return PostCollection.create(newPost)
+}
+function getPost(postId) {
+  return PostCollection.findById(postId)
+}
+function updatePost(postId, updatedPost) {
+  return PostCollection.findByIdAndUpdate(postId, updatedPost)
+}
+function deletePost(postId) {
+  return PostCollection.findByIdAndDelete(postId)
+}
 
 /* Step 5
  *
@@ -67,5 +79,9 @@ function getAllPosts() {
  * object
  */
 module.exports = {
-  getAllPosts
+  getAllPosts,
+  addPost,
+  getPost,
+  updatePost,
+  deletePost
 }

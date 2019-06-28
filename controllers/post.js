@@ -45,6 +45,46 @@ postRouter.get('/', (req, res) => {
     res.send(err)
   })
 })
+postRouter.post('/', (req, res) => {
+  postApi.addPost(req.body)
+  .then(() => {
+    res.send('Post Created')
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+})
+
+postRouter.get('/:postId', (req, res) => {
+  postApi.getPost(req.params.postId)
+  .then((post) => {
+    res.send(post)
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+})
+
+postRouter.put('/:postId', (req, res) => {
+  postApi.updatePost(req.params.postId, req.body)
+  .then(() => {
+    res.send('Post Has Been Updated!')
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+})
+
+postRouter.delete('/:postId', (req, res) => {
+  postApi.deletePost(req.params.postId)
+  .then(() => {
+    res.send('Post has been deleted')
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+})
+
 
 /* Step 6
  *
