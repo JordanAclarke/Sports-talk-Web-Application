@@ -58,6 +58,15 @@ postRouter.post('/', (req, res) => {
 postRouter.get('/new', (req, res) => {
   res.render('posts/newPostForm')
 })
+postRouter.get('/:postId/edit', (req, res) => {
+  postApi.getPost(req.params.postId)
+  .then((post) => {
+    res.render('posts/editPostForm', {post})
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+})
 
 postRouter.get('/:postId', (req, res) => {
   postApi.getPost(req.params.postId)
