@@ -1,0 +1,24 @@
+<form method="POST" action="/posts">
+
+  <!--
+    Template for creating input form for a string object key called stringMember
+    NOTE: for numeric input fields use `type="number"`
+  --->
+  <label for="category">Sport Category:</label>
+  <input type="text" placeholder="Sport Topic" name="category" id="category">
+  
+  {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
+  
+  <label for="status">Status:</label>
+  <input type="text" placeholder="How are you feeling?" name="status" id="status">
+
+  <label for="img-link">Image:</label>
+  <input type="text" placeholder="Picture of Idea" name="imgLink" id="img-link">
+
+  <label for="post">Post:</label>
+  <input type="text" placeholder="Idea" name="post" id="post">
+
+
+
+  <input type="submit" value="Create Shop" />
+</form>

@@ -39,7 +39,7 @@ const postRouter = express.Router()
 postRouter.get('/', (req, res) => {
   postApi.getAllPosts()
   .then((posts) => {
-    res.send(posts)
+    res.render('posts/posts', {posts})
   })
   .catch((err) => {
     res.send(err)
@@ -53,6 +53,10 @@ postRouter.post('/', (req, res) => {
   .catch((err) => {
     res.send(err)
   })
+})
+
+postRouter.get('/new', (req, res) => {
+  res.render('posts/newPostForm')
 })
 
 postRouter.get('/:postId', (req, res) => {

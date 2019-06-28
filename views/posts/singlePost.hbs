@@ -1,0 +1,9 @@
+<h1>{{post.category}}</h1>
+<p>{{post.status}}</p>
+<p>{{post.post}}</p>
+<p>{{post.created_at}}</p>
+
+<button href="/posts/{{post._id}}/edit">Edit Post</button>
+<form method="POST" action="/posts/{{post._id}}?_method=DELETE">
+    <input type="submit" value="Delete Post" />
+</form>
