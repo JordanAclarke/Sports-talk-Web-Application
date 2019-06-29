@@ -28,8 +28,7 @@ const mongoose = require('./connection.js')
  */
 const PostSchema = new mongoose.Schema({
   category: {
-  type: String,
-  required: true
+  type: String
  },
  post: {
    type: String,

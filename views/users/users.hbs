@@ -1,9 +1,9 @@
 <h1>Current Sportz Users</h1>
 
-<p> Users</p>
-
 <a href="/users/new">Create A User</a>
+
+
 {{#each users}}
-    <a href="/users/{{_id}}">{{userName}}</a>
+    <p><a href="/users/{{_id}}">{{userName}}</a></p>
     <p>Favorite Sport: {{favoriteSport}}</p>
 {{/each}}

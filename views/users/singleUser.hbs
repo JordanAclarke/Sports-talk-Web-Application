@@ -6,10 +6,11 @@
 <form method="POST" action="/users/{{user._id}}?_method=DELETE">
     <input type="submit" value="Delete user" />
 </form>
-{{!-- {{#each posts}}
+{{#each posts}}
+<a href="/posts/{{_id}}">{{_id}}</a>
 {{category}}
 {{status}}
 {{post}}
 
-{{/each}} --}}
+{{/each}}
 
