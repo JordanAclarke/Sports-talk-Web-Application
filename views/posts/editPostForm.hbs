@@ -4,18 +4,18 @@
 <form method="POST" action="/posts/{{post._id}}?_method=PUT">
 
  <label for="category">Sport Category:</label>
-  <input type="text" placeholder="Sport Topic" name="category" id="category">
+  <input type="text" placeholder="Sport Topic" name="category" id="category" value="{{post.category}}">
   
   {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
   
   <label for="status">Status:</label>
-  <input type="text" placeholder="How are you feeling?" name="status" id="status">
+  <input type="text" placeholder="How are you feeling?" name="status" id="status" value="{{post.status}}">
 
   <label for="img-link">Image:</label>
-  <input type="text" placeholder="Picture of Idea" name="imgLink" id="img-link">
+  <input type="text" placeholder="Picture of Idea" name="imgLink" id="img-link" value="{{post.imgLink}}">
 
   <label for="post">Post:</label>
-  <textarea type="text" placeholder="Idea" name="post" id="post" cols="30" rows="10"> </textarea>
+  <textarea type="text" placeholder="Idea" name="post" id="post" cols="30" rows="10">{{post.post}} </textarea>
 
   <input type="submit" value="Update Post" />
 </form>
