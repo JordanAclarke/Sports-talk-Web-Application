@@ -1,12 +1,14 @@
 <h1>Top Posts</h1>
 
-<p> Posts </p>
 
 <a href="/posts/new">Create A Post</a>
 {{#each posts}}
     <p>Sport Category: {{category}}</p>
     <p>Current Status: {{status}}</p>
-    <img src="{{imgLink}}" alt="Image of {{post}}">
-    <a href="/posts/{{_id}}">{{post}}</a>
     <p>Created at: {{created_at}}</p>
+    <img src="{{imgLink}}" alt="Image of {{post}}">
+    <h2><a href='/posts/{{_id}}'>POST:</a></h2>
+        <p>{{post}}</p>
+    <a href="/users/{{user._id}}">{{user.userName}}</a>
+    
 {{/each}}
