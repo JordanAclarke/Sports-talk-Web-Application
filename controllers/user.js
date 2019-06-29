@@ -68,6 +68,13 @@ userRouter.get('/:userId', (req, res) => {
   })
 })
 
+userRouter.delete('/:userId', (req, res) => {
+  userApi.deleteUser(req.params.userId)
+  .then(() => {
+    res.redirect('/users')
+  })
+})
+
 
 /* Step 6
  *
