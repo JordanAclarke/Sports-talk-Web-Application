@@ -1,0 +1,24 @@
+<a href="/users">Return To All Users</a>
+<form method="POST" action="/users">
+
+  <!--
+    Template for creating input form for a string object key called stringMember
+    NOTE: for numeric input fields use `type="number"`
+  --->
+  <label for="user-name">User Name:</label>
+  <input type="text" placeholder="User Name" name="userName" id="user-name">
+  
+  {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
+  
+  <label for="email">Email:</label>
+  <input type="text" placeholder="email" name="email" id="email">
+
+  <label for="category">Category:</label>
+  <input type="text" placeholder="Favorite Sport" name="category" id="category">
+
+  <label for="date-of-birth">Date Of Birth:</label>
+  <label type="text" placeholder="birthday" name="dateOfBirth" id="date-of-birth"> </label>
+
+
+  <input type="submit" value="Create User" />
+</form>
