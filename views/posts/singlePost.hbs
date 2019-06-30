@@ -1,7 +1,7 @@
 <h1>{{post.category}}</h1>
 <p>{{post.status}}</p>
 <p>{{post.post}}</p>
-<p>{{post.created_at}}</p>
+<p>Posted At: {{post.created_at}}</p>
 
 <a href="/posts/{{post._id}}/edit">Edit Post</a>
 <form method="POST" action="/posts/{{post._id}}?_method=DELETE">
@@ -9,7 +9,9 @@
 
 </form>
 
+<a href="/posts/{{post._id}}/comments/newCommentForm">Comment on this post</a>
 <h3>Comments</h3>
+
 <ul>
     {{#each comment}}
         <li>{{response}}</li>

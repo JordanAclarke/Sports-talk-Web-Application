@@ -1,13 +1,19 @@
-<h1>Top Posts</h1>
+<h1>Sportz</h1>
+ <p id="slogan">Talk Like A Champion Today!</p>
+
+<h3>Top Posts</h3>
 
 
-<a href="/posts/new">Create A Post</a>
+
+
+<button type="button" class="btn btn-danger"><a href="/posts/new">Create A New Post</a></button>
+
 {{#each posts}}
     <p>Sport Category: {{category}}</p>
     <p>Current Status: {{status}}</p>
     <p>Created at: {{created_at}}</p>
     <img src="{{imgLink}}" alt="Image of {{post}}">
-    <h2><a href='/posts/{{_id}}'>POST:</a></h2>
+    <h4><a href='/posts/{{_id}}'>View POST Details:</a></h4>
         <p>{{post}}</p>
     <a href="/users/{{user._id}}">{{user.userName}}</a>
     

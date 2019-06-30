@@ -16,6 +16,7 @@ const express = require('express')
  * 
  */
 const postApi = require('../models/post.js')
+const commentApi= require('../models/comment.js')
 
 /* Step 3 
  * 
@@ -71,12 +72,17 @@ postRouter.get('/:postId/edit', (req, res) => {
 postRouter.get('/:postId', (req, res) => {
   postApi.getPost(req.params.postId)
   .then((post) => {
-    res.render('posts/singlePost', {post})
+    commentApi.getCommentByPostId(post._id)
+    .then((comment) => {
+    res.render('posts/singlePost', {post, comment})
+    })
   })
   .catch((err) => {
     res.send(err)
   })
 })
+
+
 
 postRouter.put('/:postId', (req, res) => {
   postApi.updatePost(req.params.postId, req.body)

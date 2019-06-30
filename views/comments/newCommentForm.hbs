@@ -1,0 +1,24 @@
+<a href="/posts/{{post_.id}}">Return To Posts Page</a>
+
+<form method="POST" action="/posts/:postId/comment">
+
+  <!--
+    Template for creating input form for a string object key called stringMember
+    NOTE: for numeric input fields use `type="number"`
+  --->
+  <label for="name">Temporary UserName:</label>
+  <input type="type" placeholder="Name" name="name" id="name"/>
+  
+  
+  
+  {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
+
+  <label for="response">Response:</label>
+  <textarea type="text" placeholder="Response" name="response" id="response" cols="30" rows="10"> </textarea>
+
+
+
+  <input type="submit" value="Submit Response" />
+</form>
+
+
