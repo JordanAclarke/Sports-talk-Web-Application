@@ -1,6 +1,15 @@
+<div class= 'wrapper'>
 <h1>Sportz</h1>
  <p id="slogan">Talk Like A Champion Today!</p>
+</div>
 
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="/users">Sportz Members</a>
+  </li>
+</ul>
+
+<div class= 'paragraph'>
 <h3>Top Posts</h3>
 
 
@@ -11,10 +20,11 @@
 {{#each posts}}
     <p>Sport Category: {{category}}</p>
     <p>Current Status: {{status}}</p>
-    <p>Created at: {{created_at}}</p>
+    <p>Created at: {{created_at}}</p> 
     <img src="{{imgLink}}" alt="Image of {{post}}">
     <h4><a href='/posts/{{_id}}'>View POST Details:</a></h4>
         <p>{{post}}</p>
     <a href="/users/{{user._id}}">{{user.userName}}</a>
-    
+    </div>
 {{/each}}
+

@@ -1,9 +1,19 @@
 <h1>Current Sportz Members</h1>
 
-<a href="/users/new">Create A User</a>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="/posts">Sportz Members Posts</a>
+  </li>
+</ul>
+
+
+<div class="users">
+<a class ="userLink" href="/users/new">Create A User</a>
 
 
 {{#each users}}
-    <p><a href="/users/{{_id}}">{{userName}}</a></p>
+    <p><a class="userLink" href="/users/{{_id}}">{{userName}}</a></p>
     <p>Favorite Sport: {{favoriteSport}}</p>
 {{/each}}
+
+</div>
