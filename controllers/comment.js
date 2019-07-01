@@ -16,6 +16,7 @@ const express = require('express')
  * 
  */
 const commentApi = require('../models/comment.js')
+const postApi = require('../models/post.js')
 
 /* Step 3 
  * 
@@ -36,18 +37,52 @@ const commentRouter = express.Router({mergeParams: true})
  *
  * TODO: delete this handler; it's just a sample
  */ 
-commentRouter.get('/new', (req, res) => {
-  res.render('comments/newCommentForm')
-})
 
-
-commentRouter.post('/', (req, res) => {
-  req.body.postId = req.params.postId
-  commentApi.addComment(req.body)
-  .then(() => {
-    res.render('Comment has been created')
+commentRouter.get('/', (req, res) => {
+  commentApi.getAllComments()
+  .then((comments) => {
+    res.send(comments)
   })
 })
+ commentRouter.get('/new', (req, res) => {
+  postApi.getPost(req.params.postId)
+  .then((post) => {
+    res.render('comments/newCommentForm', {post})
+  })
+  
+})
+
+commentRouter.post('/', (req, res) => {
+  console.log("this is a check "+req.params.postId)
+  //req.body.postId = req.params
+  req.body.postId = req.params.postId
+  commentApi.addComment(req.body) 
+    .then((comment) => {
+      console.log(req.body)
+      res.send(comment)
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+})
+// commentRouter.post('/:postId', (req, res) => {
+//   commentApi.addComment(req.body)
+//   .then(() => {
+//     res.redirect('/posts')
+//   })
+//   .catch((err) => {
+//     res.send(err)
+//   })
+// })
+
+
+// commentRouter.post('/', (req, res) => {
+//   req.body.postId = req.params.postId
+//   commentApi.addComment(req.body)
+//   .then(() => {
+//     res.render('Comment has been created')
+//   })
+// })
 
 
 /* Step 6

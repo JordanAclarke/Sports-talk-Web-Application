@@ -78,10 +78,8 @@ postRouter.get('/:postId', (req, res) => {
     res.render('posts/singlePost', {post, comment})
     })
   })
-  .catch((err) => {
-    res.send(err)
-  })
 })
+  
 
 
 

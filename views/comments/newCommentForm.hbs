@@ -1,24 +1,25 @@
-<a href="/posts/{{post_.id}}">Return To Posts Page</a>
 
-<form method="POST" action="/posts">
+<a class='users' href="/posts/{{post._id}}">Return To Posts Page</a>
+
+<form method="POST" action="/posts/{{post._id}}/comments">
 
   <!--
     Template for creating input form for a string object key called stringMember
     NOTE: for numeric input fields use `type="number"`
   --->
   <label for="name">Temporary UserName:</label>
-  <input type="type" placeholder="Name" name="name" id="name"/>
+  <input type="type" placeholder="Name" name="name" id="name" value="{{comment.name}}"/>
   
   
   
   {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
 
   <label for="response">Response:</label>
-  <textarea type="text" placeholder="Response" name="response" id="response" cols="30" rows="10"> </textarea>
+  <textarea type="text" placeholder="Response" name="response" id="response" cols="30" rows="10"> {{comment.response}}</textarea>
 
 
 
-  <input type="submit" value="Submit Response" />
+  <input type="submit" value="Submit Response"/>
 </form>
 
 

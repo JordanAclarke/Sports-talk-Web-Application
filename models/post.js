@@ -32,11 +32,11 @@ const PostSchema = new mongoose.Schema({
  },
  post: {
    type: String,
-   required: true
+  //  required: true
  },
  created_at: {
    type: Date,
-   required: true,
+  //  required: true,
    default: Date.now
  },
  status: String,

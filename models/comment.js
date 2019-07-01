@@ -29,13 +29,16 @@ const mongoose = require('./connection.js')
 const CommentSchema = new mongoose.Schema({
  name: {
    type: String,
-   required: true
+  //  required: true
  },
  response: {
    type: String,
-   required: true
+  //  required: true
  },
- postId: String
+ postId: {
+  type: String,
+  required: true
+ } 
 })
 
 /* Step 3
@@ -51,12 +54,21 @@ const CommentCollection = mongoose.model('Comment', CommentSchema)
  * TODO: delete this it's just a sample
  *
  */
+function getAllComments () {
+  return CommentCollection.find()
+}
 function getCommentByPostId(postId) {
-  return CommentCollection.find({postId: postId})
+  return CommentCollection.find({postId})
 }
 function addComment(commentObject) {
   return CommentCollection.create(commentObject)
 }
+
+
+// function getComment(commentId) {
+//   return CommentCollection.findById(commentId)
+// }
+
 
 /* Step 5
  *
@@ -64,6 +76,9 @@ function addComment(commentObject) {
  * object
  */
 module.exports = {
+  getAllComments,
   getCommentByPostId,
   addComment
+  // getComment
 }
+
