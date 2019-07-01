@@ -53,12 +53,12 @@ commentRouter.get('/', (req, res) => {
 })
 
 commentRouter.post('/', (req, res) => {
-  console.log("this is a check "+req.params.postId)
+  // console.log("this is a check "+req.params.postId)
   //req.body.postId = req.params
   req.body.postId = req.params.postId
   commentApi.addComment(req.body) 
     .then((comment) => {
-      console.log(req.body)
+      // console.log(req.body)
       res.send(comment)
     })
     .catch((err) => {
