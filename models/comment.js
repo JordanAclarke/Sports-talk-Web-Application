@@ -35,7 +35,7 @@ const CommentSchema = new mongoose.Schema({
    type: String,
    required: true
  },
- postId: mongoose.Types.ObjectId
+ postId: String
 })
 
 /* Step 3

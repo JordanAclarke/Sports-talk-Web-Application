@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: whitesmoke;
+}
+h3 {
+    font-family: fantasy;
+    font-size: 25px;
+}
+h4 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+#slogan {
+    font-family: cursive;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+a {
+    color: black;
+}
+a:hover {
+    color: ghostwhite;
+}
+.btn:hover{
+    background-color: orange;
+}
+.btn {
+    background-color: orange;
+    border: orange;
+}
+.wrapper {
+    border: solid black;
+    background-color: black;
+    /* background-image: url('../css/giphy.gif'); */
+}
+.paragraph {
+    border: black;
+    background-color: orange;
+}
+.nav {
+    background-color: white;
+}
+.nav-link:hover {
+    color: black;
+}
+.users, .userLink {
+    color: whitesmoke;
+    display: block;
+}

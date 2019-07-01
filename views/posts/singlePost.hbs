@@ -3,14 +3,16 @@
 <p>{{post.post}}</p>
 <p>Posted At: {{post.created_at}}</p>
 
+<a class="users" href='/posts'>Return To All Posts</a>
 <a class="users" href="/posts/{{post._id}}/edit">Edit Post</a>
 <form method="POST" action="/posts/{{post._id}}?_method=DELETE">
     <input type="submit" value="Delete Post" />
 
 </form>
+
+<a class="users" href="/posts/{{post._id}}/comments/new">Comment on this post</a>
 &nbsp;
-<a class="users" href="/posts/{{post._id}}/comments/newCommentForm">Comment on this post</a>
-<h3>Comments</h3>
+<h3>Comments:</h3>
 
 <ul>
     {{#each comment}}

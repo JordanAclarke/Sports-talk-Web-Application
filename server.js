@@ -21,6 +21,7 @@ const { postRouter } = require('./controllers/post.js')
 
 const {userRouter} = require('./controllers/user.js')
 
+const { commentRouter} = require('./controllers/comment.js')
 /* Step 3
  *
  * Register middleware...
@@ -64,6 +65,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/posts', postRouter)
 app.use('/users', userRouter)
+app.use('/posts/:postId/comments', commentRouter)
 
 /* Step 5
  *

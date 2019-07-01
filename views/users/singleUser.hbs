@@ -1,3 +1,4 @@
+<a class="users" href="/users">Return To All Users</a>
 <h1>{{user.userName}}</h1>
 <p>{{user.email}}</p>
 <p>{{user.favoriteSport}}</p>
@@ -6,6 +7,8 @@
 <form method="POST" action="/users/{{user._id}}?_method=DELETE">
     <input type="submit" value="Delete user" />
 </form>
+<br>
+<h3>{{user.userName}} Current Posts:</h3>
 {{#each posts}}
 <a href="/posts/{{_id}}">{{_id}}</a>
 {{category}}

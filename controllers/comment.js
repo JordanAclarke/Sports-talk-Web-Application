@@ -36,18 +36,11 @@ const commentRouter = express.Router({mergeParams: true})
  *
  * TODO: delete this handler; it's just a sample
  */ 
-// commentRouter.get('/:postId', (req, res) => {
-//   req.body.postId = req.params.postId
-//   .then((post) => {
-//     commentApi.getCommentByPostId(post._id)
-//     .then((comment) => {
-//     res.render('comment/newCommentForm', {post, comment})
-//     })
-//   })
-//   .catch((err) => {
-//     res.send(err)
-//   })
-// })
+commentRouter.get('/new', (req, res) => {
+  res.render('comments/newCommentForm')
+})
+
+
 commentRouter.post('/', (req, res) => {
   req.body.postId = req.params.postId
   commentApi.addComment(req.body)
