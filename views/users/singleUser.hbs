@@ -3,7 +3,8 @@
 <p>{{user.email}}</p>
 <p>{{user.favoriteSport}}</p>
 
-{{!-- <a href="/users/{{user._id}}/edit">Edit user</a> --}}
+
+<a class="users" href="/users/{{user._id}}/edit">Edit user</a>
 <form method="POST" action="/users/{{user._id}}?_method=DELETE">
     <input type="submit" value="Delete user" />
 </form>

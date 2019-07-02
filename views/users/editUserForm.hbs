@@ -1,0 +1,21 @@
+<a class="users" href="/users">Return to Users Page</a>
+
+
+<form method="POST" action="/users/{{user._id}}?_method=PUT">
+
+<label for="user-name">User Name:</label>
+  <input type="text" placeholder="User Name" name="userName" id="user-name">
+  
+  {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
+  
+  <label for="email">Email:</label>
+  <input type="text" placeholder="email" name="email" id="email">
+
+  <label for="favorite-sport">Favorite Sport:</label>
+  <input type="text" placeholder="Favorite Sport" name="favoriteSport" id="favorite-sport">
+
+  <label for="date-of-birth">Date Of Birth:</label>
+  <input type="text" placeholder="birthday" name="dateOfBirth" id="date-of-birth"> </input>
+
+  <input type="submit" value="Update User" />
+</form>

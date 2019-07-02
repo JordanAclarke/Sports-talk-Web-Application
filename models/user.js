@@ -67,9 +67,9 @@ function createUser(newUser) {
 function getUser(userId) {
   return UserCollection.findById(userId)
 }
-// function updateUser(userId, userObject) {
-//   return UserCollection.findByIdAndUpdate(userId, userObject)
-// }
+function updateUser(userId, userObject) {
+  return UserCollection.findByIdAndUpdate(userId, userObject)
+}
 function deleteUser(userId) {
   return UserCollection.findByIdAndDelete(userId)
 }
@@ -83,5 +83,6 @@ module.exports = {
   getAllUsers,
   createUser,
   getUser,
+  updateUser,
   deleteUser
 }
