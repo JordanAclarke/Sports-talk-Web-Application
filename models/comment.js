@@ -57,8 +57,8 @@ const CommentCollection = mongoose.model('Comment', CommentSchema)
 function getAllComments () {
   return CommentCollection.find()
 }
-function getComment(postId) {
-  return CommentCollection.findById(postId)
+function getComment(commentId) {
+  return CommentCollection.findById(commentId)
 }
 function getCommentByPostId(postId) {
   return CommentCollection.find({postId})

@@ -1,0 +1,13 @@
+<h1>{{comment.name}}</h1>
+<p>{{comment.response}}</p>
+
+<a class="users" href='/posts'>Return To All Posts</a>
+
+<form method="POST" action="/posts/{{postId}}/comments/{{comment._id}}?_method=DELETE">
+    <input type="submit" value="Delete Post" />
+
+</form>
+
+
+
+

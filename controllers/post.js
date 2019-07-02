@@ -73,9 +73,9 @@ postRouter.get('/:postId', (req, res) => {
   postApi.getPost(req.params.postId)
   .then((post) => {
     commentApi.getCommentByPostId(post._id)
-    .then((comment) => {
-      console.log('comment',comment)
-    res.render('posts/singlePost', {post, comment})
+    .then((comments) => {
+      console.log('comment',comments)
+    res.render('posts/singlePost', {post, comments})
     })
   })
 })

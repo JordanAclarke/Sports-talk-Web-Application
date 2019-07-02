@@ -65,6 +65,11 @@ function addPost(newPost) {
 function getPost(postId) {
   return PostCollection.findById(postId)
 }
+//
+function getPostByUserId(userId) {
+  return PostCollection.findById(userId)
+}
+//
 function updatePost(postId, updatedPost) {
   return PostCollection.findByIdAndUpdate(postId, updatedPost)
 }
@@ -81,6 +86,9 @@ module.exports = {
   getAllPosts,
   addPost,
   getPost,
+  //
+  getPostByUserId,
+  //
   updatePost,
   deletePost
 }

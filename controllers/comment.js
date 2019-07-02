@@ -44,6 +44,13 @@ commentRouter.get('/', (req, res) => {
     res.send(comments)
   })
 })
+commentRouter.get('/:commentId', (req, res) => {
+  commentApi.getComment(req.params.commentId)
+  .then((comment) => {
+    res.render('comments/singleComment', {comment, postId: req.params.postId})
+  })
+})
+
  commentRouter.get('/new', (req, res) => {
   postApi.getPost(req.params.postId)
   .then((post) => {
@@ -66,18 +73,19 @@ commentRouter.post('/', (req, res) => {
     })
 })
 
-
-
-
-
-
+commentRouter.delete('/:commentId', (req, res) => {
+  
+  commentApi.deleteComment(req.params.commentId)
+  .then(() => {
+    res.redirect(`/posts/${req.params.postId}`)
+  })
+})
 
 
 
 // commentRouter.get('/edit', (req, res) => {
-//   postApi.getPost(req.params.postId)
+//   commentApi.getComment(req.params.commentId)
 //   .then((comment) => {
-//     console.log(postId)
 //     res.render('comments/editCommentForm', {comment})
 //     console.log(comment)
 //   })

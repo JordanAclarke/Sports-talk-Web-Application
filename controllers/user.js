@@ -58,6 +58,22 @@ userRouter.post('/', (req, res) => {
   })
 })
 
+////
+// userRouter.get('/:userId', (req, res) => {
+//   userApi.getUser(req.params.userId)
+//   .then((user) => {
+//     postApi.getPostByUserId(req.params.userId)
+//     .then((post) => {
+//       res.render('users/singleUser', {user, post})
+//     })
+//   })
+// })
+
+///
+
+
+
+
 userRouter.get('/:userId', (req, res) => {
   userApi.getUser(req.params.userId)
   .then(user => {
