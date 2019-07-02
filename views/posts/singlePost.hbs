@@ -5,6 +5,8 @@
 
 <a class="users" href='/posts'>Return To All Posts</a>
 <a class="users" href="/posts/{{post._id}}/edit">Edit Post</a>
+
+{{!-- Entered /users/{{userId}} before /posts/{{post._id}}--}}
 <form method="POST" action="/posts/{{post._id}}?_method=DELETE">
     <input type="submit" value="Delete Post" />
 

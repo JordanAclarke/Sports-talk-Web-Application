@@ -15,6 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
+// const userApi = require('../models/user.js')
 const postApi = require('../models/post.js')
 const commentApi= require('../models/comment.js')
 
@@ -46,7 +47,27 @@ postRouter.get('/', (req, res) => {
     res.send(err)
   })
 })
+
+//ended here
+postRouter.get('/new', (req, res) => {
+  console.log('in the new request handler')
+  res.render('posts/newPostForm')
+})
+
+//Entered here
+postRouter.get('/:postId', (req, res) => {
+  postApi.getPost(req.params.postId)
+  .then((post) => {
+    res.render('posts/singlePost', {post})
+  })
+})
+
+
+
 postRouter.post('/', (req, res) => {
+  //entered here
+  // req.body.userId = req.params.userId
+  //entered here
   postApi.addPost(req.body)
   .then(() => {
     res.redirect('/posts')
@@ -56,9 +77,9 @@ postRouter.post('/', (req, res) => {
   })
 })
 
-postRouter.get('/new', (req, res) => {
-  res.render('posts/newPostForm')
-})
+//ENTERED HERE
+////////
+
 postRouter.get('/:postId/edit', (req, res) => {
   postApi.getPost(req.params.postId)
   .then((post) => {

@@ -91,6 +91,24 @@ userRouter.get('/:userId/edit', (req, res) => {
     res.render('users/editUserForm', {user})
   })
 })
+
+
+//NEW INSERTIONS
+// userRouter.get('/:userId', (req, res) => {
+//   userApi.getUser(req.params.userId)
+//   .then((user) => {
+//     userApi.getPostByUserId(user._id)
+//     .then((post) => {
+//       console.log('post',post)
+//     res.render('users/singleUser', {user, post})
+//     })
+//   })
+// })
+
+//END OF NEW INSERTION
+
+
+
 userRouter.put('/:userId', (req, res) => {
   userApi.updateUser(req.params.userId, req.body)
   .then(() => {

@@ -62,13 +62,18 @@ function getAllPosts() {
 function addPost(newPost) {
   return PostCollection.create(newPost)
 }
+//NEW INSERTION
+// function getPostByUserId(userId) {
+//   return PostCollection.find({userId})
+// }
+//NEW INSERTION
 function getPost(postId) {
   return PostCollection.findById(postId)
 }
 //
-function getPostByUserId(userId) {
-  return PostCollection.findById(userId)
-}
+// function getPostByUserId(userId) {
+//   return PostCollection.findById(userId)
+// }
 //
 function updatePost(postId, updatedPost) {
   return PostCollection.findByIdAndUpdate(postId, updatedPost)
@@ -87,7 +92,7 @@ module.exports = {
   addPost,
   getPost,
   //
-  getPostByUserId,
+  // getPostByUserId,
   //
   updatePost,
   deletePost
