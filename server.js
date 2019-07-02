@@ -65,6 +65,8 @@ app.set('view engine', 'hbs')
  */
 app.use('/posts', postRouter)
 app.use('/users', userRouter)
+// app.use('/users/:userId/posts', postRouter)
+app.use('/comments', commentRouter)
 app.use('/posts/:postId/comments', commentRouter)
 
 /* Step 5

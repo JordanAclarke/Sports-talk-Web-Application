@@ -55,12 +55,12 @@ postRouter.get('/new', (req, res) => {
 })
 
 //Entered here
-postRouter.get('/:postId', (req, res) => {
-  postApi.getPost(req.params.postId)
-  .then((post) => {
-    res.render('posts/singlePost', {post})
-  })
-})
+// postRouter.get('/:postId', (req, res) => {
+//   postApi.getPost(req.params.postId)
+//   .then((post) => {
+//     res.render('posts/singlePost', {post})
+//   })
+// })
 
 
 
@@ -91,6 +91,7 @@ postRouter.get('/:postId/edit', (req, res) => {
 })
 
 postRouter.get('/:postId', (req, res) => {
+  console.log('This is being called')
   postApi.getPost(req.params.postId)
   .then((post) => {
     commentApi.getCommentByPostId(post._id)

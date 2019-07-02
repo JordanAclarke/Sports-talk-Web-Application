@@ -44,6 +44,13 @@ commentRouter.get('/', (req, res) => {
     res.send(comments)
   })
 })
+commentRouter.get('/new', (req, res) => {
+  postApi.getPost(req.params.postId)
+  .then((post) => {
+    res.render('comments/newCommentForm', {post})
+  })
+})
+
 commentRouter.get('/:commentId', (req, res) => {
   commentApi.getComment(req.params.commentId)
   .then((comment) => {
@@ -51,13 +58,6 @@ commentRouter.get('/:commentId', (req, res) => {
   })
 })
 
- commentRouter.get('/new', (req, res) => {
-  postApi.getPost(req.params.postId)
-  .then((post) => {
-    res.render('comments/newCommentForm', {post})
-  })
-  
-})
 
 commentRouter.post('/', (req, res) => {
   // console.log("this is a check "+req.params.postId)

@@ -14,10 +14,10 @@
 
 <a class="users" href="/posts/{{post._id}}/comments/new">Comment on this post</a>
 &nbsp;
-<h3 class="users">Comments: </h3>
+<h3 class="users">Comments:</h3>
 
 {{#each comments}}
-<a class="users" href="/posts/{{../post._id}}/comments/{{_id}}">View Comment</a>
+<a class='test' href="/posts/{{../post._id}}/comments/{{_id}}">View Comment</a>
 <h4 class='test'>Username: {{name}}</h4>
 <p class='test'>Response: {{response}}</p>
 {{!-- <a class="users" href='/posts/{{_id}}/comments/edit'>Edit Comments</a> --}}
