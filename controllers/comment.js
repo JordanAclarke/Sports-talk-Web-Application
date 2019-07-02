@@ -17,6 +17,7 @@ const express = require('express')
  */
 const commentApi = require('../models/comment.js')
 const postApi = require('../models/post.js')
+const responseApi= require('../models/response.js')
 
 /* Step 3 
  * 
@@ -54,7 +55,10 @@ commentRouter.get('/new', (req, res) => {
 commentRouter.get('/:commentId', (req, res) => {
   commentApi.getComment(req.params.commentId)
   .then((comment) => {
-    res.render('comments/singleComment', {comment, postId: req.params.postId})
+    responseApi.getResponseByCommentId(comment._id)
+    .then((response) => {
+    res.render('comments/singleComment', {comment, response, postId: req.params.postId})
+  })
   })
 })
 

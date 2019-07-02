@@ -57,10 +57,10 @@ function getAllResponses () {
   return ResponseCollection.find()
 }
 function getResponse(responseId) {
-  return ResponseCollection.findById(ResponseId)
+  return ResponseCollection.findById(responseId)
 }
-function getResponseByCommentId(commentId) {
-  return ResponseCollection.find({commentId})
+function getResponseByCommentId(postId, commentId) {
+  return ResponseCollection.find({postId, commentId})
 }
 function addResponse(responseObject) {
   return ResponseCollection.create(responseObject)

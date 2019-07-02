@@ -73,7 +73,6 @@ function deleteComment(postId) {
   return CommentCollection.findByIdAndDelete(postId)
 }
   
-
 // function getComment(commentId) {
 //   return CommentCollection.findById(commentId)
 // }

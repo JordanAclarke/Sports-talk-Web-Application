@@ -17,6 +17,7 @@ const express = require('express')
  */
 const responseApi = require('../models/response.js')
 const commentApi = require('../models/comment.js')
+const postApi = require('../models/post.js')
 
 
 /* Step 3 
@@ -46,6 +47,7 @@ responseRouter.get('/', (req, res) => {
   })
 })
 responseRouter.get('/new', (req, res) => {
+  postApi.getPost(req.params.postId)
   commentApi.getComment(req.params.commentId)
   .then((comment) => {
     res.render('responses/newResponseForm', {comment})
@@ -62,12 +64,12 @@ responseRouter.get('/:responseId', (req, res) => {
 
 responseRouter.post('/', (req, res) => {
   // console.log("this is a check "+req.params.postId)
-  //req.body.postId = req.params
+  // req.body.postId = req.params
   req.body.commentId = req.params.commentId
   responseApi.addResponse(req.body) 
     .then(() => {
       // console.log(req.body)
-      res.redirect(`/posts/${req.params.postId}`)
+      res.redirect(`/posts/${req.params.commentId}`)
     })
     .catch((err) => {
       res.send(err)
@@ -78,7 +80,7 @@ responseRouter.delete('/:responseId', (req, res) => {
   
   responseApi.deleteResponse(req.params.responseId)
   .then(() => {
-    res.redirect(`/posts/${req.params.postId}`)
+    res.redirect(`/posts/${req.params.commentId}`)
   })
 })
 
@@ -110,5 +112,5 @@ responseRouter.delete('/:responseId', (req, res) => {
  *
  */
 module.exports = {
-  commentRouter
+  responseRouter
 }
