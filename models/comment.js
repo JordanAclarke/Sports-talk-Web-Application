@@ -57,13 +57,22 @@ const CommentCollection = mongoose.model('Comment', CommentSchema)
 function getAllComments () {
   return CommentCollection.find()
 }
+function getComment(postId) {
+  return CommentCollection.findById(postId)
+}
 function getCommentByPostId(postId) {
   return CommentCollection.find({postId})
 }
 function addComment(commentObject) {
   return CommentCollection.create(commentObject)
 }
-
+function updateComment(postId, commentObject) {
+  return CommentCollection.findByIdAndUpdate(postId, commentObject)
+}
+function deleteComment(postId) {
+  return CommentCollection.findByIdAndDelete(postId)
+}
+  
 
 // function getComment(commentId) {
 //   return CommentCollection.findById(commentId)
@@ -77,8 +86,10 @@ function addComment(commentObject) {
  */
 module.exports = {
   getAllComments,
+  getComment,
   getCommentByPostId,
-  addComment
-  // getComment
+  addComment,
+  updateComment,
+  deleteComment
 }
 

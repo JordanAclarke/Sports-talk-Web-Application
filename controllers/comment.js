@@ -65,22 +65,32 @@ commentRouter.post('/', (req, res) => {
       res.send(err)
     })
 })
-// commentRouter.post('/:postId', (req, res) => {
-//   commentApi.addComment(req.body)
-//   .then(() => {
-//     res.redirect('/posts')
+
+
+
+
+
+
+
+
+
+// commentRouter.get('/edit', (req, res) => {
+//   postApi.getPost(req.params.postId)
+//   .then((comment) => {
+//     console.log(postId)
+//     res.render('comments/editCommentForm', {comment})
+//     console.log(comment)
 //   })
 //   .catch((err) => {
 //     res.send(err)
 //   })
 // })
 
-
-// commentRouter.post('/', (req, res) => {
+// commentRouter.put('/', (req, res) => {
 //   req.body.postId = req.params.postId
-//   commentApi.addComment(req.body)
-//   .then(() => {
-//     res.render('Comment has been created')
+//   commentApi.updateComment(req.params.postId, req.body)
+//   .then(()=> {
+//     res.redirect('/posts')
 //   })
 // })
 

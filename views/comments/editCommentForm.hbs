@@ -1,0 +1,17 @@
+<a class="users" href="/posts">Return to Post Page</a>
+
+
+<form method="POST" action="/posts/{{post._id}}?_method=PUT">
+
+<label for="name">Temporary UserName:</label>
+  <input type="type" placeholder="Name" name="name" id="name" value="{{comment.name}}"/>
+  
+  
+  
+  {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
+
+  <label for="response">Response:</label>
+  <textarea type="text" placeholder="Response" name="response" id="response" cols="30" rows="10"> {{comment.response}}</textarea>
+
+  <input type="submit" value="Update Comment" />
+</form>
