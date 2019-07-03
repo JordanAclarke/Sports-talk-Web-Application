@@ -6,7 +6,7 @@ For Project two, I decided to create a sportz social media app that allows users
 
 [Trello](https://trello.com/b/KcTEYPR2/jordan-clarke-sportz-talk-board)
 
-[Sportz-Talk]('https://rocky-garden-97706.herokuapp.com/posts')
+[Sportz-Talk](https://rocky-garden-97706.herokuapp.com/posts)
 
 ## Technologies Used
 - HTML,CSS, Javascript, Node, Express, Mongoose & Mongo
