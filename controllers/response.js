@@ -48,12 +48,10 @@ responseRouter.get('/', (req, res) => {
   })
 })
 responseRouter.get('/new', (req, res) => {
-  postApi.getPost(req.params.postId)
-  commentApi.getComment(req.params.commentId)
-  .then((comment) => {
-    res.render('responses/newResponseForm', {comment})
+  const commentId = req.params.commentId;
+  const postId = req.params.postId;
+    res.render('responses/newResponseForm', {commentId, postId})
   })
-})
 
 responseRouter.get('/:responseId', (req, res) => {
   responseApi.getResponse(req.params.responseId)
@@ -66,6 +64,7 @@ responseRouter.get('/:responseId', (req, res) => {
 responseRouter.post('/', (req, res) => {
   console.log("this is a check "+ req.params.postId)
   req.body.postId = req.params.postId
+  req.body.commentId= req.params.commentId
   responseApi.addResponse(req.body) 
     .then(() => {
       // console.log(req.body)

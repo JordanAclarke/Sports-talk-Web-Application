@@ -11,7 +11,7 @@
 <button type="button" class="btn btn-outline-dark"><a class="users" href="/posts/{{postId}}/comments/{{comment._id}}/responses/new">Respond To This Comment</a></button>
 
 {{#each responses}}
-<a class='test' href="/posts/{{../post._id}}/comments/{{../comment._id}}/responses/{{_id}}">View Response</a>
+<a class='test' href="/posts/{{post._id}}/comments/{{comment._id}}/responses/{{_id}}">View Response</a>
 <h4 class='test'>Username: {{name}}</h4>
 <p class='test'>Response: {{response}}</p>
 {{!-- <a class="users" href='/posts/{{_id}}/comments/edit'>Edit Comments</a> --}}
