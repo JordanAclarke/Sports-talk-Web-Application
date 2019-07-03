@@ -62,19 +62,22 @@ responseRouter.get('/:responseId', (req, res) => {
   })
 })
 
+
 responseRouter.post('/', (req, res) => {
-  // console.log("this is a check "+req.params.postId)
-  // req.body.postId = req.params
-  req.body.commentId = req.params.commentId
+  console.log("this is a check "+ req.params.postId)
+  req.body.postId = req.params.postId
   responseApi.addResponse(req.body) 
     .then(() => {
       // console.log(req.body)
-      res.redirect(`/posts/${req.params.commentId}`)
+      res.redirect('/posts')
     })
     .catch((err) => {
       res.send(err)
     })
 })
+// `/${req.params.commentId}
+
+
 
 responseRouter.delete('/:responseId', (req, res) => {
   

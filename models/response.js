@@ -38,7 +38,12 @@ const ResponseSchema = new mongoose.Schema({
   type: String,
   required: true
  },
- postId: mongoose.Types.ObjectId
+ postId: {
+   type: String,
+   required: true,
+ }
+ 
+//  mongoose.Types.ObjectId
   //  required: true
  
 })

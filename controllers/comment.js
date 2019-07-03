@@ -57,10 +57,10 @@ commentRouter.get('/:commentId', (req, res) => {
   .then((comment) => {
     responseApi.getResponseByCommentId(comment._id)
     .then((response) => {
-      console.log(comment)
-      console.log(comment._id)
-      console.log(response)
-      console.log(req.params.postId)
+      // console.log(comment)
+      // console.log(comment._id)
+      // console.log(response)
+      // console.log(req.params.postId)
     res.render('comments/singleComment', {comment, response, postId: req.params.postId})
   })
   })
