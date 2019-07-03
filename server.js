@@ -65,6 +65,11 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+
+app.get('/', (req, res) => {
+    res.redirect('/posts')
+})
+
 app.use('/posts', postRouter)
 app.use('/users', userRouter)
 // app.use('/users/:userId/posts', postRouter)
