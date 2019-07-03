@@ -2,7 +2,7 @@
 
 For Project two, I decided to create a sportz social media app that allows users to create/comment on posts regarding their favorite sport.
 
-##links
+## Project Links
 
 [Trello](https://trello.com/b/KcTEYPR2/jordan-clarke-sportz-talk-board)
 
