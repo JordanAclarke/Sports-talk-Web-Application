@@ -1,5 +1,20 @@
-<h1>Current Sportz Members</h1>
-
+<section>
+  <h1>
+    <span>S</span>
+    <span>P</span>
+    <span>O</span>
+    <span>R</span>
+    <span>T</span>
+    <span>Z</span>
+    <span>M</span>
+    <span>E</span>
+    <span>M</span>
+    <span>B</span>
+    <span>E</span>
+    <span>R</span>
+    <span>S</span>
+  </h1>
+</section>
 <ul class="nav justify-content-center">
   <li class="nav-item">
     <a class="nav-link active" href="/posts">Sportz Members Posts</a>
@@ -13,7 +28,7 @@
 
 {{#each users}}
     <p><a class="userLink" href="/users/{{_id}}">{{userName}}</a></p>
-    <p>Favorite Sport: {{favoriteSport}}</p>
+    <p><a class="userLink" href="/users/{{_id}}">Favorite Sport: {{favoriteSport}}</a></p>
 {{/each}}
 
 </div>

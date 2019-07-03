@@ -71,7 +71,7 @@ app.use('/users', userRouter)
 // app.use('/comments', commentRouter)
 app.use('/posts/:postId/comments', commentRouter)
 app.use('/responses', responseRouter)
-app.use('/posts/:postId/comments/responses', responseRouter)
+app.use('/posts/:postId/comments/:commentId/responses', responseRouter)
 
 /* Step 5
  *

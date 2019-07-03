@@ -121,5 +121,11 @@ h1 span:nth-child(5) {
 
     animation-delay: 1s;
 }
- 
- 
+.stack {
+    display: flexbox;
+    align-content: center;
+}
+ /*  */
+ .btn-outline-dark {
+     background-color: black;
+ }

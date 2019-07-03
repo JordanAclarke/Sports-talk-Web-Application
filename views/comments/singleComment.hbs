@@ -1,14 +1,14 @@
 <h1>{{comment.name}}</h1>
 <p>{{comment.response}}</p>
 
-<a class="users" href='/posts'>Return To All Posts</a>
+<button type="button" class="btn btn-outline-dark"><a class="users" href='/posts'>Return To All Posts</a></button>
 
 <form method="POST" action="/posts/{{postId}}/comments/{{comment._id}}?_method=DELETE">
     <input type="submit" value="Delete Post" />
 
 </form>
 
-<a class="users" href="/posts/{{postId}}/comments/{{comment._id}}/responses/new">Respond To This Comment</a>
+<button type="button" class="btn btn-outline-dark"><a class="users" href="/posts/{{postId}}/comments/{{comment._id}}/responses/new">Respond To This Comment</a></button>
 
 {{#each responses}}
 <a class='test' href="/posts/{{../post._id}}/comments/{{../comment._id}}/responses/{{_id}}">View Response</a>

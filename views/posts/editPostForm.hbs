@@ -2,20 +2,23 @@
 
 
 <form method="POST" action="/posts/{{post._id}}?_method=PUT">
-
+  <div class="stack">
  <label for="category">Sport Category:</label>
   <input type="text" placeholder="Sport Topic" name="category" id="category" value="{{post.category}}">
-  
+  </div>
   {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
-  
+  <div class="stack">
   <label for="status">Status:</label>
   <input type="text" placeholder="How are you feeling?" name="status" id="status" value="{{post.status}}">
-
+  </div>
+  <div class="stack">
   <label for="img-link">Image:</label>
   <input type="text" placeholder="Picture of Idea" name="imgLink" id="img-link" value="{{post.imgLink}}">
+  </div>
 
+  <div class="stack">
   <label for="post">Post:</label>
   <textarea type="text" placeholder="Idea" name="post" id="post" cols="30" rows="10">{{post.post}} </textarea>
-
+  </div>
   <input type="submit" value="Update Post" />
 </form>

@@ -1,29 +1,36 @@
 
-
+<div class='picture'>
 <a class="users" href="/posts">Return To All Posts Page</a>
+&nbsp;
 <form method="POST" action="/posts">
 
   <!--
     Template for creating input form for a string object key called stringMember
     NOTE: for numeric input fields use `type="number"`
   --->
+  <div class="stack">
   <label for="category">Sport Category:</label>
   <input type="text" placeholder="Favorite Sport" name="category" id="category"/>
-  
+  </div>
   
   
   {{!-- value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" /> --}}
-  
+  <div class="stack">
   <label for="status">Status:</label>
   <input type="text" placeholder="How are you feeling?" name="status" id="status">
+  </div>
 
+  <div class='stack'>
   <label for="img-link">Image:</label>
   <input type="text" placeholder="Picture of Idea" name="imgLink" id="img-link">
+  </div>
 
+  <div class="stack">
   <label for="post">Post:</label>
   <textarea type="text" placeholder="Idea" name="post" id="post" cols="30" rows="10"> </textarea>
-
+  </div>
 
 
   <input type="submit" value="Submit Post" />
 </form>
+</div>
