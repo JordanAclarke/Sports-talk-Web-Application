@@ -18,6 +18,7 @@ const express = require('express')
 // const userApi = require('../models/user.js')
 const postApi = require('../models/post.js')
 const commentApi= require('../models/comment.js')
+const responseApi= require('../models/response.js')
 
 /* Step 3 
  * 
@@ -97,6 +98,12 @@ postRouter.get('/:postId', (req, res) => {
     commentApi.getCommentByPostId(post._id)
     .then((comments) => {
       console.log('comment',comments)
+      //i entered right here
+      // .then((responses) => {
+      //   responseApi.getReponseByCommentId(comment._id)
+      //   console.log('responses', responses)
+      // })
+      //delete above
     res.render('posts/singlePost', {post, comments})
     })
   })

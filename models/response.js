@@ -32,7 +32,7 @@ const ResponseSchema = new mongoose.Schema({
  },
  response: {
    type: String,
-  //  required: true
+  required: true
  },
  commentId: {
   type: String,
@@ -67,8 +67,8 @@ function getAllResponses () {
 function getResponse(responseId) {
   return ResponseCollection.findById(responseId)
 }
-function getResponseByCommentId(postId, commentId) {
-  return ResponseCollection.find({postId, commentId})
+function getResponseByCommentId(commentId) {
+  return ResponseCollection.find({commentId})
 }
 function addResponse(responseObject) {
   return ResponseCollection.create(responseObject)

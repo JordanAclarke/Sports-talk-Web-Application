@@ -53,15 +53,17 @@ commentRouter.get('/new', (req, res) => {
 })
 
 commentRouter.get('/:commentId', (req, res) => {
+  console.log('dat comment ID ', req.params.commentId)
   commentApi.getComment(req.params.commentId)
   .then((comment) => {
-    responseApi.getResponseByCommentId(comment._id)
-    .then((response) => {
+    
+    responseApi.getResponseByCommentId(req.params.commentId)
+    .then((responses) => {
       // console.log(comment)
       // console.log(comment._id)
-      // console.log(response)
+      console.log("responses",responses)
       // console.log(req.params.postId)
-    res.render('comments/singleComment', {comment, response, postId: req.params.postId})
+    res.render('comments/singleComment', {comment, responses, postId: req.params.postId})
   })
   })
 })
