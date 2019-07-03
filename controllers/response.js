@@ -15,6 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
+
 const responseApi = require('../models/response.js')
 const commentApi = require('../models/comment.js')
 const postApi = require('../models/post.js')
@@ -57,10 +58,9 @@ responseRouter.get('/new', (req, res) => {
 responseRouter.get('/:responseId', (req, res) => {
   responseApi.getResponse(req.params.responseId)
   .then((response) => {
-    res.render('responses/singleResponse', {response, commentId: req.params.commentId})
+    res.render('responses/singleResponse', {response})
   })
 })
-
 
 responseRouter.post('/', (req, res) => {
   // console.log("this is a check "+req.params.postId)

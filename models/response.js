@@ -37,7 +37,10 @@ const ResponseSchema = new mongoose.Schema({
  commentId: {
   type: String,
   required: true
- } 
+ },
+ postId: mongoose.Types.ObjectId
+  //  required: true
+ 
 })
 
 /* Step 3

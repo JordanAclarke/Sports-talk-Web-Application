@@ -1,7 +1,7 @@
 
-<a class='users' href="/posts/{{post._id}}/comments/{{comment._id}}">Return To Posts Page</a>
+<a class='users' href="/posts">Return To Posts Page</a>
 
-<form method="POST" action="/posts/{{post._id}}/comments/{{comment._id}}/responses">
+<form method="POST" action="/posts/{{../post._id}}/comments/{{comment._id}}/responses/{{response._id}}">
 
   <!--
     Template for creating input form for a string object key called stringMember
