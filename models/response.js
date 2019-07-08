@@ -74,8 +74,8 @@ function addResponse(responseObject) {
   return ResponseCollection.create(responseObject)
 }
 
-function deleteResponse(commentId) {
-  return ResponseCollection.findByIdAndDelete(commentId)
+function deleteResponse(responseId) {
+  return ResponseCollection.findByIdAndDelete(responseId)
 }
   
 

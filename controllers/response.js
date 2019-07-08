@@ -54,9 +54,15 @@ responseRouter.get('/new', (req, res) => {
   })
 
 responseRouter.get('/:responseId', (req, res) => {
+  const commentId = req.params.commentId;
+  const postId = req.params.postId;
+  // const responseId = req.params.responseId
   responseApi.getResponse(req.params.responseId)
   .then((response) => {
-    res.render('responses/singleResponse', {response})
+    res.render('responses/singleResponse', {response, commentId, postId})
+  })
+  .catch((err) => {
+    console.log('This is the' + err)
   })
 })
 
@@ -68,7 +74,7 @@ responseRouter.post('/', (req, res) => {
   responseApi.addResponse(req.body) 
     .then(() => {
       // console.log(req.body)
-      res.redirect('/posts')
+      res.redirect(`/posts/${req.params.postId}`)
     })
     .catch((err) => {
       res.send(err)
@@ -79,12 +85,14 @@ responseRouter.post('/', (req, res) => {
 
 
 responseRouter.delete('/:responseId', (req, res) => {
-  
+  console.log('im trying')
   responseApi.deleteResponse(req.params.responseId)
   .then(() => {
     res.redirect(`/posts/${req.params.commentId}`)
   })
 })
+
+// /${req.params.commentId}`
 
 
 

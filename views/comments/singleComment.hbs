@@ -1,7 +1,7 @@
-<h1>{{comment.name}}</h1>
+<h1>UserName: {{comment.name}}</h1>
 <p>{{comment.response}}</p>
 
-<button type="button" class="btn btn-outline-dark"><a class="users" href='/posts'>Return To All Posts</a></button>
+<button type="button" class="btn btn-outline-dark"><a class="users" href='/posts/{{postId}}'>Return To The Post</a></button>
 
 <form method="POST" action="/posts/{{postId}}/comments/{{comment._id}}?_method=DELETE">
     <input type="submit" value="Delete Post" />
@@ -13,11 +13,11 @@
 <h3>Responses:</h3>
 
 {{#each responses}}
-{{response}}
-{{!-- <a class='test' href="/posts/{{post._id}}/comments/{{comment._id}}/responses/{{_id}}">View Response</a>
+<a class='test' href="/posts/{{postId}}/comments/{{commentId}}/responses/{{_id}}">View Response</a>
 <h4 class='test'>Username: {{name}}</h4>
-<p class='test'>Response: {{response}}</p> --}}
-{{!-- <a class="users" href='/posts/{{_id}}/comments/edit'>Edit Comments</a> --}}
+<p class='test'>Response: {{response}}</p> 
 {{/each}}
+
+
 
 

@@ -1,10 +1,10 @@
-<h1>{{response.name}}</h1>
+<h1>UserName: {{response.name}}</h1>
 <p>{{response.response}}</p>
 
-<a class="users" href='/posts'>Return To All Posts</a>
+<a class="users" href='/posts/{{postId}}/comments/{{commentId}}'>Return To Comment</a>
 
-<form method="POST" action="/posts/{{post._Id}}/comments/{{comment._id}}/responses/{{response._id}}?_method=DELETE">
-    <input type="submit" value="Delete Post" />
+<form method="POST" action="/posts/{{postId}}/comments/{{commentId}}/responses/{{responseId}}?_method=DELETE">
+    <input type="submit" value="Delete Response" />
 
 </form>
 

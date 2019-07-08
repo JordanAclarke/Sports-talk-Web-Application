@@ -76,7 +76,7 @@ commentRouter.post('/', (req, res) => {
   commentApi.addComment(req.body) 
     .then(() => {
       // console.log(req.body)
-      res.redirect('/posts')
+      res.redirect(`/posts/${req.params.postId}`)
     })
     .catch((err) => {
       res.send(err)
