@@ -1,6 +1,6 @@
 # Sportz-Talk !!
 
-For Project two, I decided to create a sportz social media app that allows users to create/comment on posts regarding their favorite sport.
+For Project two, I decided to create a sports social media app that allows users to create/comment on posts regarding their favorite sport.
 
 ## Project Links
 
