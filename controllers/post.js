@@ -115,7 +115,7 @@ postRouter.get('/:postId', (req, res) => {
 postRouter.put('/:postId', (req, res) => {
   postApi.updatePost(req.params.postId, req.body)
   .then(() => {
-    res.redirect('/posts')
+    res.redirect(`/posts/${req.params.postId}`)
   })
   .catch((err) => {
     res.send(err)
