@@ -3,7 +3,7 @@
 
 <button type="button" class="btn btn-outline-dark"><a class="users" href='/posts/{{postId}}/comments/{{commentId}}'>Return To Comment</a></button>
 
-<form method="POST" action="/posts/{{postId}}/comments/{{commentId}}/responses/{{responseId}}?_method=DELETE">
+<form method="POST" action="/posts/{{postId}}/comments/{{commentId}}/responses/{{response._id}}?_method=DELETE">
     <input type="submit" value="Delete Response" />
 
 </form>

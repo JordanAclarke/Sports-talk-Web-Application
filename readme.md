@@ -10,7 +10,7 @@ For Project two, I decided to create a sports social media app that allows users
 
 ## Technologies Used
 - HTML,CSS, Javascript, Node, Express, Mongoose & Mongo
-- Design- Google Fonts
+- Google Fonts
 - Wireframing & User Stories- Trello & Moque Up
 - Visual Studio Code
 

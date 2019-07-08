@@ -88,7 +88,7 @@ responseRouter.delete('/:responseId', (req, res) => {
   console.log('im trying')
   responseApi.deleteResponse(req.params.responseId)
   .then(() => {
-    res.redirect(`/posts/${req.params.commentId}`)
+    res.redirect('/posts')
   })
 })
 
